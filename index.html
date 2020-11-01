@@ -4,31 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>Add Product Form</title>
+    <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
-    <h1>Add Video Game</h1>
+    <h1>Add Money to Account</h1>
     <div id="validation-summary">
         <p>Errors go here -></p>
     </div>
 
-    <form>
-        <label for="title">Title: </label>
-        <input id="title" type="text">
+    <form id="form">
+        <label for="Fullame">Full Name: </label>
+        <input id="Fullame" type="text">
         <br>
 
-        <label for="price">Price: </label>
-        <input id="price" type="text">
+        <label for="accountNumber">Account Number: </label>
+        <input id="accountNumber" type="text">
+        <br>
+        
+        <label for="routingNumber">Routing Number: </label>
+        <input id="accountNumber" type="text">
         <br>
 
-        <label for="rating">Rating: </label>
-        <select id="rating">
-            <option>Everyone</option>
-            <option>Teen</option>
-            <option>Mature</option>
+        <label for="currency">Currency: </label>
+        <select id="currency">
+            <option>USD</option>
+            <option>EUR</option>
+            <option>JPY</option>
+            <option>CAD</option>
+            <option>AUD</option>
         </select>
         <br>
 
-        <input type="button" value="Add New Video Game">
+        <input type="button" value="Add Money">
     </form>
 </body>
 </html>
