@@ -1,0 +1,11 @@
+form{
+    text-align: center;
+}
+label{
+    padding: 3%;
+}
+input{
+    align-items: center;
+    margin: 0.3%;
+    width: 15%;
+}
