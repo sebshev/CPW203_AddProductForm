@@ -92,22 +92,27 @@ function isAllDataValid(){
     let title = getInputById("title").value;
     if(title == ""){
         isValid = false;
-        let errSummary = getByID("validation-summary");
-        let errItem = document.createElement("li");
-        errItem.innerText = "Title is required!"
-
-        errSummary.appendChild(errItem);
+        addErrorMessage("Title is required!");
     }
 
     let author = getInputById("author").value;
     if(author == ""){
         isValid = false;
-        let errSummary = getByID("validation-summary");
-        let errItem = document.createElement("li");
-        errItem.innerText = "Author is required!"
+        addErrorMessage("Author is required!");
+    }
 
-        errSummary.appendChild(errItem);
+    let genre = (<HTMLOptionElement>getByID("genre")).value
+    if(genre == "") {
+        isValid = false;
+        addErrorMessage("Choose a Genre!");
     }
     return isValid;
+}
+
+function addErrorMessage(errMsg:string) {
+    let errSummary = getByID("validation-summary");
+    let errItem = document.createElement("li");
+    errItem.innerText = errMsg;
+    errSummary.appendChild(errItem);
 }
 

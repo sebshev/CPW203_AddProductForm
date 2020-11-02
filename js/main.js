@@ -48,18 +48,23 @@ function isAllDataValid() {
     var title = getInputById("title").value;
     if (title == "") {
         isValid = false;
-        var errSummary = getByID("validation-summary");
-        var errItem = document.createElement("li");
-        errItem.innerText = "Title is required!";
-        errSummary.appendChild(errItem);
+        addErrorMessage("Title is required!");
     }
     var author = getInputById("author").value;
     if (author == "") {
         isValid = false;
-        var errSummary = getByID("validation-summary");
-        var errItem = document.createElement("li");
-        errItem.innerText = "Author is required!";
-        errSummary.appendChild(errItem);
+        addErrorMessage("Author is required!");
+    }
+    var genre = getByID("genre").value;
+    if (genre == "") {
+        isValid = false;
+        addErrorMessage("Choose a Genre!");
     }
     return isValid;
+}
+function addErrorMessage(errMsg) {
+    var errSummary = getByID("validation-summary");
+    var errItem = document.createElement("li");
+    errItem.innerText = errMsg;
+    errSummary.appendChild(errItem);
 }
