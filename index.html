@@ -3,39 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Add Product Form</title>
+    <title>Add Book Form</title>
     <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
-    <h1>Add Money to Account</h1>
+    <h1>Add Book to Library</h1>
     <div id="validation-summary">
         <p>Errors go here -></p>
     </div>
 
     <form id="form">
-        <label for="Fullame">Full Name: </label>
-        <input id="Fullame" type="text">
+        <label for="title">Title: </label>
+        <input id="title" type="text">
         <br>
 
-        <label for="accountNumber">Account Number: </label>
-        <input id="accountNumber" type="text">
-        <br>
-        
-        <label for="routingNumber">Routing Number: </label>
-        <input id="accountNumber" type="text">
+        <label for="author">Author: </label>
+        <input id="author" type="text">
         <br>
 
-        <label for="currency">Currency: </label>
-        <select id="currency">
-            <option>USD</option>
-            <option>EUR</option>
-            <option>JPY</option>
-            <option>CAD</option>
-            <option>AUD</option>
+        <label for="genre">Genre: </label>
+        <select id="genre">
+            <option>Fiction</option>
+            <option>Non-Fiction</option>
+            <option>Historical</option>
+            <option>Cooking</option>
+            <option>Self-Help</option>
         </select>
         <br>
 
-        <input type="button" value="Add Money">
+        <input type="button" value="Add Book">
     </form>
+
+    <script src="/js/main.js"></script>
 </body>
 </html>
