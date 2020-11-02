@@ -19,10 +19,22 @@ window.onload = function(){
     addBtn.onclick = addBook;
 }
 
+function getByID(id:string){
+    return document.getElementById(id)
+}
+
+/**
+ * Clears all errors in validation summary
+ */
+function clearAllErrors(){
+    let errSummary = getByID('validation-summary');
+    errSummary.innerText = "";
+}
 /**
  * 
  */
 function addBook(){
+    clearAllErrors();
     if(isAllDataValid()){
         let book = getBook();
         displayBook(book);
@@ -70,9 +82,32 @@ function displayBook(myBook:Book):void{
     displayDiv.appendChild(bookInfo);
 }
 
-
+function getInputById(id:string):HTMLInputElement {
+    return <HTMLInputElement>document.getElementById(id);
+}
 // ADD VALIDAITON CODE
 function isAllDataValid(){
-    return true;
+    let isValid = true;
+
+    let title = getInputById("title").value;
+    if(title == ""){
+        isValid = false;
+        let errSummary = getByID("validation-summary");
+        let errItem = document.createElement("li");
+        errItem.innerText = "Title is required!"
+
+        errSummary.appendChild(errItem);
+    }
+
+    let author = getInputById("author").value;
+    if(author == ""){
+        isValid = false;
+        let errSummary = getByID("validation-summary");
+        let errItem = document.createElement("li");
+        errItem.innerText = "Author is required!"
+
+        errSummary.appendChild(errItem);
+    }
+    return isValid;
 }
 

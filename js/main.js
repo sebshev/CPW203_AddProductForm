@@ -7,7 +7,15 @@ window.onload = function () {
     var addBtn = document.querySelector("input[type=button]");
     addBtn.onclick = addBook;
 };
+function getByID(id) {
+    return document.getElementById(id);
+}
+function clearAllErrors() {
+    var errSummary = getByID('validation-summary');
+    errSummary.innerText = "";
+}
 function addBook() {
+    clearAllErrors();
     if (isAllDataValid()) {
         var book = getBook();
         displayBook(book);
@@ -32,6 +40,26 @@ function displayBook(myBook) {
     displayDiv.appendChild(bookHeading);
     displayDiv.appendChild(bookInfo);
 }
+function getInputById(id) {
+    return document.getElementById(id);
+}
 function isAllDataValid() {
-    return true;
+    var isValid = true;
+    var title = getInputById("title").value;
+    if (title == "") {
+        isValid = false;
+        var errSummary = getByID("validation-summary");
+        var errItem = document.createElement("li");
+        errItem.innerText = "Title is required!";
+        errSummary.appendChild(errItem);
+    }
+    var author = getInputById("author").value;
+    if (author == "") {
+        isValid = false;
+        var errSummary = getByID("validation-summary");
+        var errItem = document.createElement("li");
+        errItem.innerText = "Author is required!";
+        errSummary.appendChild(errItem);
+    }
+    return isValid;
 }
